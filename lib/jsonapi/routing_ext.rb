@@ -256,6 +256,9 @@ module ActionDispatch
 
         def resource_type_with_module_prefix(resource = nil)
           resource_name = resource || @scope[:jsonapi_resource]
+          puts 'resource_type_with_module_prefix'
+          puts resource_name
+          puts [@scope[:module], resource_name].compact.collect(&:to_s).join('/')
           [@scope[:module], resource_name].compact.collect(&:to_s).join('/')
         end
       end
